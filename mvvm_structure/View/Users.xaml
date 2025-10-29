@@ -1,0 +1,33 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mvvm_structure.View"
+        xmlns:ViewModel="clr-namespace:mvvm_structure.ViewModel" x:Class="mvvm_structure.View.Users"
+        mc:Ignorable="d"
+        Title="Users" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ListView x:Name="MainListView" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding MainModelList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" Width="70" DisplayMemberBinding="{Binding Id}"/>
+
+                    <GridViewColumn Header="Name" Width="70" DisplayMemberBinding="{Binding Name}"/>
+
+                    <GridViewColumn Header="Family" Width="70" DisplayMemberBinding="{Binding Family}"/>
+
+                    <GridViewColumn Header="Age" Width="70" DisplayMemberBinding="{Binding Age}"/>
+
+                    <GridViewColumn Header="Ceate" Width="70" DisplayMemberBinding="{Binding Create}"/>
+
+                    <GridViewColumn Header="Update" Width="70"/>
+
+                </GridView>
+            </ListView.View>
+            <ListView.DataContext>
+                <ViewModel:MainViewModel/>
+            </ListView.DataContext>
+        </ListView>
+    </Grid>
+</Window>
